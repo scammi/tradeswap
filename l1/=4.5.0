@@ -1,0 +1,37 @@
+
+> classic-level@1.3.0 install /Users/skamy/Documents/Dev/Charged/tradeswap/l1/node_modules/classic-level
+> node-gyp-build
+
+
+> secp256k1@4.0.3 install /Users/skamy/Documents/Dev/Charged/tradeswap/l1/node_modules/secp256k1
+> node-gyp-build || exit 0
+
+
+> keccak@3.0.4 install /Users/skamy/Documents/Dev/Charged/tradeswap/l1/node_modules/keccak
+> node-gyp-build || exit 0
+
++ hardhat@2.19.4
++ @types/chai@4.3.11
++ hardhat-gas-reporter@1.0.9
++ chai@4.4.0
++ ethers@6.9.2
++ solidity-coverage@0.8.5
++ @types/node@20.11.0
++ ts-node@10.9.2
++ @typechain/hardhat@9.1.0
++ @nomicfoundation/hardhat-ethers@3.0.5
++ @nomicfoundation/hardhat-chai-matchers@2.0.3
++ typechain@8.3.2
++ @types/mocha@10.0.6
++ @nomicfoundation/hardhat-network-helpers@1.0.10
++ @nomicfoundation/hardhat-toolbox@4.0.0
++ @typechain/ethers-v6@0.5.1
++ @nomicfoundation/hardhat-verify@2.0.3
++ typescript@5.3.3
+added 582 packages from 572 contributors and audited 592 packages in 60.375s
+
+92 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
