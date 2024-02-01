@@ -9,6 +9,9 @@ async function main() {
   // We get the contract to deploy
   const Governance = await ethers.getContractFactory("Governance");
 
+  const connectedAddresss = Governance.signer;
+  console.log(connectedAddresss);
+
   const contract = await Governance.deploy();
   await contract.deployed();
 

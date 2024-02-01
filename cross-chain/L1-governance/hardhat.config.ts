@@ -3,7 +3,7 @@ import "@nomiclabs/hardhat-waffle";
 import { HardhatUserConfig } from "hardhat/config";
 
 // import file with Sepolia params
-const sepolia = require("./sepolia.json");
+const goerli = require("./sepolia.json");
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -12,8 +12,8 @@ const config: HardhatUserConfig = {
   networks: {
     // Sepolia network
     sepolia: {
-      url: sepolia.nodeUrl,
-      accounts: [sepolia.deployerPrivateKey],
+      url: goerli.nodeUrl,
+      accounts: [goerli.deployerPrivateKey],
     },
   },
 };

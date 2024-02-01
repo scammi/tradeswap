@@ -1,15 +1,15 @@
 import { BigNumber, Contract, Wallet, ethers } from "ethers";
 import { Provider, utils } from "zksync-ethers";
 const GOVERNANCE_ABI = require("./governance.json");
-const GOVERNANCE_ADDRESS = "<GOVERNANCE-ADDRESS>";
+const GOVERNANCE_ADDRESS = "0x6Da08b6038F44e66C2d2F347906ed3683FB9E8c8";
 const COUNTER_ABI = require("./counter.json");
-const COUNTER_ADDRESS = "<COUNTER-ADDRESS>";
+const COUNTER_ADDRESS = "0x8BB6Ed9730E5d4094c1f6c9821272240D94360Ef";
 
 async function main() {
   // Enter your Ethereum L1 provider RPC URL.
-  const l1Provider = new ethers.providers.JsonRpcProvider("<RPC-URL>");
+  const l1Provider = new ethers.providers.JsonRpcProvider("https://1rpc.io/sepolia");
   // Set up the Governor wallet to be the same as the one that deployed the governance contract.
-  const wallet = new ethers.Wallet("<YOUR-PRIVATE-KEY>", l1Provider);
+  const wallet = new ethers.Wallet("2da196251859393fbd131880a2912446feeff732d4b84d797b49a94447b04655", l1Provider);
   // Set a constant that accesses the Layer 1 contract.
   const govcontract = new Contract(GOVERNANCE_ADDRESS, GOVERNANCE_ABI, wallet);
 
@@ -39,15 +39,17 @@ async function main() {
     calldata: data,
     caller: utils.applyL1ToL2Alias(GOVERNANCE_ADDRESS),
   });
+
   // baseCost takes the price and limit and formats the total in wei.
   // For more information on `REQUIRED_L1_TO_L2_GAS_PER_PUBDATA_LIMIT` see the [fee model documentation](../developer-guides/transactions/fee-model.md).
   const baseCost = await zkSyncContract.l2TransactionBaseCost(
-    gasPrice,
-    gasLimit,
+    gasPrice.mul(2),
+    gasLimit.mul(2),
     utils.REQUIRED_L1_TO_L2_GAS_PER_PUBDATA_LIMIT,
   );
 
   // !! If you don't include the gasPrice and baseCost in the transaction, a re-estimation of fee may generate errors.
+  console.log('>>>>>>')
   const tx = await govcontract.callZkSync(
     zkSyncAddress,
     COUNTER_ADDRESS,
@@ -57,10 +59,10 @@ async function main() {
     {
       // Pass the necessary ETH `value` to cover the fee for the operation
       value: baseCost,
-      gasPrice,
+      gasPrice: gasPrice.mul(2),
     },
   );
-
+  console.log(tx)
   // Wait until the L1 tx is complete.
   await tx.wait();
 

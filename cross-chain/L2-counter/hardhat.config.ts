@@ -13,7 +13,7 @@ module.exports = {
     },
     zkSyncTestnet: {
       url: "https://sepolia.era.zksync.dev",
-      ethNetwork: "<Sepolia RPC URL>",
+      ethNetwork: "https://rpc.ankr.com/eth_goerli",
       zksync: true,
     },
   },

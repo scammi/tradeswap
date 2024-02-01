@@ -1,4 +1,4 @@
 {
-  "nodeUrl": "",
-  "deployerPrivateKey": ""
+  "nodeUrl": "https://1rpc.io/sepolia",
+  "deployerPrivateKey": "2da196251859393fbd131880a2912446feeff732d4b84d797b49a94447b04655"
 }
