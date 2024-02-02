@@ -2,21 +2,19 @@ import { BigNumber, Contract, Wallet, ethers } from "ethers";
 import { Provider, utils } from "zksync-ethers";
 
 const CONFIG = require("../../L1-governance/sepolia.json")
-const VAULT_ABI = require("./vault.json");
 const DESTINATION_NFT_ABI = require("./destinationNFT.json");
-const ORIGIN_NFT_ABI = require("./originNFT.json");
+const VAULT_ABI = require("./vault.json");
 
 const VAULT_ADDRESS = "0x7096b10e158a28a110ec61a21fd8dc56cc064e80";
-const DESTINATION_NFT_ADDRESS = " 0x48F54e595bf039CF30fa5F768c0b57EAC6508a06 ";
+const DESTINATION_NFT_ADDRESS = "0xc54c47A3B872621D192430bb81fbB0a2c8dD282B";
 const ORIGIN_NFT_ADDRESS = "0xaF8301d33f3341Fc6Ac0e98191015Fa9FF5A4D11";
-const DESTINATION_USER_ADDRESS = "0xc54c47A3B872621D192430bb81fbB0a2c8dD282B";
+const DESTINATION_USER_ADDRESS = "0x48F54e595bf039CF30fa5F768c0b57EAC6508a06";
 const BRIDGE_TOKEN_ID = 1;
 
 async function main() {
   const l1Provider = new ethers.providers.JsonRpcProvider("https://sepolia.infura.io/v3/8ef07dfe7367497f9b7d4a7ad2437ec8");
   const wallet = new ethers.Wallet(CONFIG.deployerPrivateKey, l1Provider);
   const vaultContract = new Contract(VAULT_ADDRESS, VAULT_ABI, wallet);
-  const originNFTContract = new Contract(ORIGIN_NFT_ADDRESS, ORIGIN_NFT_ABI, wallet);
 
   const l2Provider = new Provider("https://sepolia.era.zksync.dev");
   const zkSyncAddress = await l2Provider.getMainContractAddress();
