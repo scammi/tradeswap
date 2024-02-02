@@ -4,7 +4,7 @@ import { Deployer } from "@matterlabs/hardhat-zksync-deploy";
 import { ethers } from "ethers";
 
 // Insert the address of the governance contract
-const GOVERNANCE_ADDRESS = "0x6Da08b6038F44e66C2d2F347906ed3683FB9E8c8";
+const GOVERNANCE_ADDRESS = "0xf92a4370766b8996E4059860523238cB13A24CFA";
 
 // An example of a deploy script that will deploy and call a simple contract.
 export default async function (hre: HardhatRuntimeEnvironment) {

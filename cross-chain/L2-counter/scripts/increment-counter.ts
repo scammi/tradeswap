@@ -1,13 +1,13 @@
 import { BigNumber, Contract, Wallet, ethers } from "ethers";
 import { Provider, utils } from "zksync-ethers";
 const GOVERNANCE_ABI = require("./governance.json");
-const GOVERNANCE_ADDRESS = "0x6Da08b6038F44e66C2d2F347906ed3683FB9E8c8";
+const GOVERNANCE_ADDRESS = "0xf92a4370766b8996E4059860523238cB13A24CFA";
 const COUNTER_ABI = require("./counter.json");
-const COUNTER_ADDRESS = "0x8BB6Ed9730E5d4094c1f6c9821272240D94360Ef";
+const COUNTER_ADDRESS = "0x8e59C5F14C2fA6396B649Ca0F57D3B0A6A4F2565";
 
 async function main() {
   // Enter your Ethereum L1 provider RPC URL.
-  const l1Provider = new ethers.providers.JsonRpcProvider("https://ethereum-sepolia.publicnode.com");
+  const l1Provider = new ethers.providers.JsonRpcProvider("https://sepolia.infura.io/v3/8ef07dfe7367497f9b7d4a7ad2437ec8");
   // Set up the Governor wallet to be the same as the one that deployed the governance contract.
   const wallet = new ethers.Wallet("2da196251859393fbd131880a2912446feeff732d4b84d797b49a94447b04655", l1Provider);
   // Set a constant that accesses the Layer 1 contract.
@@ -60,6 +60,7 @@ async function main() {
       // Pass the necessary ETH `value` to cover the fee for the operation
       value: baseCost,
       gasPrice: gasPrice.mul(2),
+      nonce: 6
     },
   );
   console.log(tx)

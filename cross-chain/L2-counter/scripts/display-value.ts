@@ -1,6 +1,6 @@
 import { Contract, Provider } from "zksync-ethers";
 
-const COUNTER_ADDRESS = "0x8BB6Ed9730E5d4094c1f6c9821272240D94360Ef";
+const COUNTER_ADDRESS = "0x8e59C5F14C2fA6396B649Ca0F57D3B0A6A4F2565";
 const COUNTER_ABI = require("./counter.json");
 
 async function main() {

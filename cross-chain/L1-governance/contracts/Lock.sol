@@ -4,8 +4,7 @@ pragma solidity ^0.8.13;
 import "@openzeppelin/contracts/interfaces/IERC721.sol";
 import "@matterlabs/zksync-contracts/l1/contracts/zksync/interfaces/IZkSync.sol";
 
-contract Lock {
-
+contract Vault {
     address public tokenAddress;
     constructor(address _tokenAddress) {
         tokenAddress = _tokenAddress;

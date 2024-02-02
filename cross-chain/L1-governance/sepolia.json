@@ -1,4 +1,4 @@
 {
-  "nodeUrl": "https://ethereum-sepolia.publicnode.com",
+  "nodeUrl": "https://sepolia.infura.io/v3/8ef07dfe7367497f9b7d4a7ad2437ec8",
   "deployerPrivateKey": "2da196251859393fbd131880a2912446feeff732d4b84d797b49a94447b04655"
 }
