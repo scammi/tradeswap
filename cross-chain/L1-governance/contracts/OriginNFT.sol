@@ -8,7 +8,7 @@ contract OriginNFT is ERC721, Ownable {
     uint256 private _nextTokenId;
 
     constructor()
-        ERC721("OriginNFT", "ORG")
+        ERC721("OriginNFT", "")
         Ownable()
     {}
 

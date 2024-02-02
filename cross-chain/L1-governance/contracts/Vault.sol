@@ -5,13 +5,10 @@ import "@openzeppelin/contracts/interfaces/IERC721.sol";
 import "@matterlabs/zksync-contracts/l1/contracts/zksync/interfaces/IZkSync.sol";
 
 contract Vault {
-    address public tokenAddress;
-    constructor(address _tokenAddress) {
-        tokenAddress = _tokenAddress;
-    }
-    
+
     function wormhole(
         uint256 tokenId,
+        address tokenAddress,
         address zkSyncAddress,
         address contractAddr,
         bytes memory data,

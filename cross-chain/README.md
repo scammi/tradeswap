@@ -1,8 +1,9 @@
-# Cross-chain governance full example
+# Steps
 
-This is the full example for the [zkSync "Cross-chain governance" tutorial](https://era.zksync.io/docs/dev/tutorials/cross-chain-tutorial.html).
+1. Deploy L1: OriginNFT, Vault
+2. Mint Origin tokens to deployer
+3. Approve vault to use tokens
 
-It consists of two folders:
+4. Deploy Destination NFT on L2
 
-- `deploy-governance` which contains the hardhat project that is used to deploy the governance smart contract on Sepolia.
-- `counter` which contains the hardhat project for the `Counter` L2 smart contract. It also contains scripts that are used to display the value of the counter as well as to call the governance to update the counter from L1.
+5. Run bridge script.
