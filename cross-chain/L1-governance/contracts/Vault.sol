@@ -10,7 +10,7 @@ contract Vault {
         tokenAddress = _tokenAddress;
     }
     
-    function lock(
+    function wormhole(
         uint256 tokenId,
         address zkSyncAddress,
         address contractAddr,
