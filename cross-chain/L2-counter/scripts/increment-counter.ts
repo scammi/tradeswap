@@ -8,7 +8,7 @@ const COUNTER_ADDRESS = "0x8e59C5F14C2fA6396B649Ca0F57D3B0A6A4F2565";
 async function main() {
   // Enter your Ethereum L1 provider RPC URL.
   const l1Provider = new ethers.providers.JsonRpcProvider("https://sepolia.infura.io/v3/8ef07dfe7367497f9b7d4a7ad2437ec8");
-  const wallet = new ethers.Wallet("2da196251859393fbd131880a2912446feeff732d4b84d797b49a94447b04655", l1Provider);
+  const wallet = new ethers.Wallet("", l1Provider);
   const govcontract = new Contract(GOVERNANCE_ADDRESS, GOVERNANCE_ABI, wallet);
 
   const l2Provider = new Provider("https://sepolia.era.zksync.dev");
